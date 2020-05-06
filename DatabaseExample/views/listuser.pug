@@ -1,0 +1,16 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/css/style.css")
+    title 사용자 리스트
+  body
+    section.wrap
+      header List (using PUG)
+      form(method='post' action='/process/listuser')
+        div 아래 confirm 버튼을 누르세요.
+        div
+          input(type='submit' value='confirm')
+    
+      a(href='/process/adduser') /process/adduser    

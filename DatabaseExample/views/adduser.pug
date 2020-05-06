@@ -1,0 +1,19 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/css/style.css")
+    title addUser - MongoDB 사용
+  body
+    section.wrap
+      header Add Users (using PUG)
+      form(method='post' action='/process/adduser')
+        div
+          input(type='text' name='id' placeholder='your ID' value='dooyou4')
+        div
+          input(type='password' name='pw' placeholder='password' value='44')
+        div
+          input(type='text' name='nm' placeholder='your name' value='dooyou4Name')
+        div
+          input(type='submit' value='confirm')    

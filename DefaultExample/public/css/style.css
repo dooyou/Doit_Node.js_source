@@ -1,0 +1,17 @@
+@charset "UTF-8";
+section.wrap{  width:70%;  margin:2% auto 0;  padding:1rem; border:1px solid #dddddd;}
+ul.nav{display:flex; justify-content: space-between; list-style:none; margin:0 0 20px; padding:0; border-bottom:1px solid #ddd;}
+ul.nav li {padding: 0 0 1rem ; text-transform: uppercase; font-weight: bold;}
+ul.nav li a{text-decoration: none;}
+header {padding:1rem; border-bottom:1px solid #222222; font-weight:bold; margin-bottom:1rem; text-align:center;}
+
+
+@media screen and (min-width:320px) and (max-width:768px){
+  section.wrap{ width : 90%; }
+  .divider {display:none;}
+}
+
+@media screen and (min-width:768px) and (max-width:979px){
+  section.wrap { width : 80%; }
+
+}

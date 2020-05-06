@@ -1,0 +1,19 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/css/style.css")
+    title MongoDB 첫 사용 - Login
+  body
+    section.wrap
+      header Login (using PUG)
+      form(method='post' action='/process/login')
+        div
+          input(type='text' name='id' placeholder='your ID' value='dooyou')
+        div
+          input(type='password' name='password' placeholder='password' value='123456')
+        div
+          input(type='submit' value='confirm')
+    
+      a(href='/process/adduser') /process/adduser    

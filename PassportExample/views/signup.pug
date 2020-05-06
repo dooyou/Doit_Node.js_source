@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  form(method='post' action='/signup')
+    .ui.placeholder.segment
+      .ui.two.column.very.relaxed.stackable.grid
+        .column
+          .ui.form
+            .field
+              <label>User email</label>
+              .ui.left.icon.input
+                input(type='text' name='email' placeholder='your email' value='test@email')
+                <i class="user icon"></i>
+              - if(message.length > 0) {
+                div.alert #{message}
+              - }
+            .field
+              <label>Password</label>
+              .ui.left.icon.input
+                input(type='password' name='password' placeholder='password' value='111')
+                <i class="lock icon"></i>
+            .field
+              <label>Nick Name</label>
+              .ui.left.icon.input
+                input(type='text' name='name' placeholder='Nick Name' value='Name')
+                <i class="user icon"></i>
+            button(class="ui primary button" type='submit' value='') signup
+            
+        .middle.aligned.column
+          .ui.big.button(onclick="location.href='/login'")
+            <i class="signup icon"></i> Login
+              
+      .ui.vertical.divider Or
+  
+    

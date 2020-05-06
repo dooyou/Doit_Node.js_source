@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  form(method='post' action='/process/login')
+    .ui.placeholder.segment
+      .ui.two.column.very.relaxed.stackable.grid
+        .column
+          .ui.form
+            .field
+              <label>User ID</label>
+              .ui.left.icon.input
+                input(type='text' name='id' placeholder='your ID' value='111')
+                <i class="user icon"></i>
+            .field
+              <label>Password</label>
+              .ui.left.icon.input
+                input(type='password' name='password' placeholder='password' value='111')
+                <i class="lock icon"></i>
+            button(class="ui primary button" type='submit' value='') Login
+        
+        .middle.aligned.column
+          .ui.big.button(onclick="location.href='/process/adduser'")
+            <i class="signup icon"></i> Sign Up
+              
+      .ui.vertical.divider Or

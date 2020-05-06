@@ -1,0 +1,21 @@
+{
+  "name": "nodejs_doit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calc.js",
+  "dependencies": {
+    "events": "^3.1.0",
+    "http": "0.0.0",
+    "moment": "^2.24.0",
+    "nconf": "^0.10.0",
+    "util": "^0.12.1",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

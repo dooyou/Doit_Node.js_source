@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Profile
+  - if(user.provider == undefined || user.provider == '') { 
+    h2 Local
+    h4 이름 : #{user.name}
+    h4 메일 : #{user.email}
+  - } else if (user.provider == 'facebook') {
+    h2 FaceBook
+    h4 아이디 : #{user.facebook.id}
+    h4 메일 : #{user.facebook.email}
+    h4 이름 : #{user.facebook.name}
+  - } else if (user.provider == 'google') {
+    h2 google
+    h4 아이디 : #{user.google.id}
+    h4 메일 : #{user.google.email}
+    h4 이름 : #{user.google.name}
+  - }

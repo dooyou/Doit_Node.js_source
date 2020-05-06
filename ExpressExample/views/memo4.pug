@@ -1,0 +1,42 @@
+doctype html
+html(lang="ko")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet", href="/css/style.css")
+    title Mission4-나의메모
+  body
+    section.wrap
+      header MEMO 4
+      form(action='/mission/memo' method='post' enctype='multipart/form-data')
+        div
+          input(type='text' name='author' placeholder='작성자')
+          input(type='text' name='rdate' placeholder='' id='currentDate' value='')
+        div
+          textarea(name='contents' placeholder='내용')
+        div
+          input(type='file' name='photo')
+        div
+          input(type='submit' value='전송')
+          p(onclick='closeBTN()') 닫기 
+    script.
+      const date = new Date()
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const today = date.getDate();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+      const current = year+'-'+month+'-'+today+' '+hours+':'+minutes+':'+seconds;
+      function init(){
+        document.getElementById('currentDate').value = current;
+      }
+      
+      init();
+      
+      const close = document.getElementsByClassName('wrap');
+      function closeBTN(){
+        close[0].style.display = 'none';
+      }
+        
+    
+  
