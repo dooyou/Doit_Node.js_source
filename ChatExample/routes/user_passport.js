@@ -18,6 +18,11 @@ module.exports = function(router, passport) {
       }
   });
 
+  router.route('/chat01').get((req,res)=>{
+    console.log('/chat01 요청됨');
+    res.render('chat01')
+  });
+
   // 로그인 화면
   router.route('/login').get(function(req, res) {
     console.log('/login 패스 요청 됨');

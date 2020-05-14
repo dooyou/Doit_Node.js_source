@@ -117,3 +117,10 @@ const server = http.createServer(app).listen(app.get('port'), function(){
 //socket.io 서버를 시작합니다.
 const io = socketio.listen(server);
 console.log('socket.io 요청을 받아들일 준비가 되었습니다.');
+
+// 클라이언트가 연결했을 때의 이벤트 처리.
+io.sockets.on('connection', function(socket){
+  console.log('connection info : ', socket.request.connection._peername);
+  socket.remoteAddress = socket.request.connection._peername.address;
+  socket.remotePort = socket.request.connection._peername.port;
+});
