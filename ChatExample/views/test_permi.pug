@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  
+  h1#test
+  
+  script.
+    
+    const permissions = title === '과장' ? ['근로시간', '수당'] : ['근로시간'];
+    
+    function getTimePermission({ title }) {
+      if (title === '과장'){
+        return ['근로시간', '초과근무승인', '수당'];
+        }
+      if (title === '부장'){
+        return ['근로시간', '초과근무승인'];
+        }
+      return ['근로시간'];
+    }
+
+      const permissions = getTimePermission({ title : '사원' });
+      document.getElementById('test').innerHTML = permissions;
+
+
+      function coffeeOrder({coffee}){
+        if(coffee === 'americano'){
+          return ['espresso', 'hot water'];
+        }
+        if(coffee === 'caffelatte'){
+          return ['espresso', 'milk'];
+        }
+        return ['What do you want ?'];
+      }
+      
+      document.getElementById('like').innerHTML = coffeeOrder({coffee : value});

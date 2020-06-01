@@ -22,6 +22,14 @@ module.exports = function(router, passport) {
     console.log('/chat01 요청됨');
     res.render('chat01')
   });
+  router.route('/chat02').get((req,res)=>{
+    console.log('/chat02 요청됨');
+    res.render('chat02')
+  });
+  router.route('/test').get((req,res) => {
+    console.log('test 요청됨');
+    res.render('test')
+  })
 
   // 로그인 화면
   router.route('/login').get(function(req, res) {

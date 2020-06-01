@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h3 채팅 클라이언트 01
+  div
+    input(type="text" id="hostInput" value="localhost")
+    input(type="text" id="portInput" value="3000")
+    button(id="connectButton")  연결하기
+  div
+    div
+      span 보내는 사람 아이디 : 
+      input(type="text" id="senderInput" value="test01")
+    div
+      span 받는 사람 아이디 : 
+      input(type="text" id="recepientInput" value="ALL")
+    div
+      span 메시지 데이터 : 
+      input(type="text" id="dataInput" value="안녕!")  
+    br
+    button(id="sendButton")  전송     
+  hr
+  p 결과 : 
+  #result
+    
+
+  script(src='/js/chat02.js')
+  
+    
+                  
