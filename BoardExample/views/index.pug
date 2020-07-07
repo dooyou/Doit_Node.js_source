@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 INDEX
+  form(method="post" action="/process/listpost") 
+    label 아래 [전송] 버튼을 누르세요.
+    input(type="hidden" name="page" value="0")
+    input(type="hidden" name="perPage" value="2")
+    input(type="submit" value="전송" name="")

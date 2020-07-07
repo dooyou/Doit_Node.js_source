@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  - function listpost(page, perPage) {
+  -   document.location = '/process/listpost?page=' + page + '&perPage=' + perPage;
+  - }
+    
+  .ui.grid
+    .two.wide.column 번호
+    .eight.wide.column 제목
+    .two.wide.column 작성자
+    .two.wide.column 작성일
+    .two.wide.column 조회수
+  - var noStart = (pageCount - page) * perPage;
+  
+  - for (var i = 0; i < posts.length; i++) {
+  -   var curTitle = posts[i]._doc.title;
+  -   var curContents = posts[i]._doc.contents;
+  -   var curWriter = posts[i]._doc.writer.email;
+  -   var curNo = noStart - i;
+  
+  .ui.very.relaxed.selection.celled.list
+    .item
+      .ui.grid
+        .two.wide.column #{curNo}
+        .fourteen.wide.column(onclick=`"javascript:window.location='/process/showpost/${posts[i]}._id'"`)
+          .ui.header
+            h4.ui.left.aligned.header #{curTitle}
+            h5.ui.right.aligned.orange.header
+              #{curWriter}  2015-06-01 12
+  - }
+  
+  .tiny.ui.basic.buttons
+  - if (page > 0) {
+    .ui.icon.button(onclick="listpost(0, #{perPage} ") i.backward.icon
+    .ui.icon.button(onclick="listpost(#{(page-1)}, #{perPage}) ") i.left.chevron.icon
+  - } else {
+    .ui.disabled.icon.button i.backward.icon
+    .ui.disabled.icon.button i.left.chevron.icon
+  - }
+  - var initial = Math.floor(page / 10) * 10;
+  - console.log('initial : ' + initial);
+  - 
+  - var max = pageCount - initial;
+  - if (max > 10) {
+  -   max = initial + 10;
+  - } else {
+  -   max = initial + max;
+  - }
+  - console.log('max : ' + max);
+  - 
+  - for (var i = initial; i < max; i++) {
+  -   if (i != page) {
+    .ui.button(onclick="listpost(#{i}, #{perPage}) ") #{i}
+  -   } else {
+    .ui.active.basic.button #{i}
+  -   }
+  | }
+  
+      
+  a.ui.button(href='/process/listpost?page=0&perPage=2') 재요청
+  a.ui.button(href='/public/addpost.pug') 글쓰기

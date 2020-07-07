@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  script(src="/js/addpost.js")
+  
+  form.content.ui.form(method="post" action="/process/addpost")
+    h4.ui.dividing.header 글쓰기 입력 항목
+    .two.fields
+      .field
+        label 제목
+        input(type="text" name="title" placeholder="제목입력")
+      .field
+       
+    .field
+      label 내용
+      textarea(id="contents" name="contents" rows="10" cols="80")    
+    
+    .two.fields
+      .field
+        label 작성자
+        input(type="text" name="writer" placeholder="작성자 아이디 입력")
+      .field   
+      
+    input.ui.submit.button(type="submit" value="추가" name="")
+    button.ui.button(name="" onclick="javascript:history.back()") 취소
+  

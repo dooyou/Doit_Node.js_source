@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  script(src="/js/showpost.js")
+  h1 showpost
+  .board_title 
+    #{title}
+  
+  #titleOutput 
+    #{curTitle}
+    
+  #contentsOutput 
+    #{decodedContents}
+    
+  div
+    img(src="/img/author.png" class="ui avatar image") 
+    
+    #{curWriter}
+  div
+    a.ui.button(href='/process/listpost?page=0&perPage=2') 글 목록
+  
+  
+  
+  
+  
+  
+  
